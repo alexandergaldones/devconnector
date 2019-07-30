@@ -1,28 +1,31 @@
-import React from 'react'
+import React, { Fragment } from 'react';
+import axios from 'axios';
 
 const Login = () => {
 
-    const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        password: '',
-        password2: ''
-    });
+    //const [formData, setFormData] = useState({
+    //    name: '',
+    //    email: '',
+    //    password: '',
+    //    password2: ''
+    //});
 
-    const { name, email, password, password2 } = formData; // state hook
+    //const { name, email, password, password2 } = formData; // state hook
 
-    const onChange = e => setFormData({ ...formData, [e.target.name]: e.target.value });
+    //const onChange = e => setFormData({ ...formData, [e.target.name]: e.target.value });
 
     const onSubmit = async e => {
         e.preventDefault();
-        if(password != password2) {
-            console.log('Passwords do not match');
-        } else {
-            console.log('SUCCESS');
+        //if(password != password2) {
+        //    console.log('Passwords do not match');
+        //} else {
+        //    console.log('SUCCESS');
 
+            
             /*
             * Saving in a traditional way... but we'll do it instead in redux action
             */
+           /*
             const newUser = {
                 name,
                 email,
@@ -42,7 +45,8 @@ const Login = () => {
             }catch(err) {
                 console.error(err.response.data);
             }
-        }
+            */
+        //}
     }
     /*
     == formData na
@@ -60,10 +64,10 @@ const Login = () => {
       <p className="lead"><i className="fas fa-user"></i> Create Your Account</p>
       <form className="form" action="create-profile.html" onSubmit={e => onSubmit(e)}>
         <div className="form-group">
-          <input type="text" placeholder="Name" name="name" value={name} onChange={e => onChange(e)} required />
+          <input type="text" placeholder="Name" name="name"  required />
         </div>
         <div className="form-group">
-          <input type="email" placeholder="Email Address" name="email" value={email} onChange={e => onChange(e)} required />
+          <input type="email" placeholder="Email Address" name="email" required />
           <small className="form-text"
             >This site uses Gravatar so if you want a profile image, use a
             Gravatar email</small
@@ -75,8 +79,6 @@ const Login = () => {
             placeholder="Password"
             name="password"
             minLength="6"
-            value={password} 
-            onChange={e => onChange(e)}
           />
         </div>
         <div className="form-group">
@@ -86,8 +88,6 @@ const Login = () => {
             name="password2"
             minLength="6"
             name="password2"
-            value={password2} 
-            onChange={e => onChange(e)}
           />
         </div>
         <input type="submit" className="btn btn-primary" value="Register" />
@@ -96,7 +96,6 @@ const Login = () => {
         Already have an account? <a href="login.html">Sign In</a>
       </p>
     </Fragment>
-    
 }
 
 export default Login
