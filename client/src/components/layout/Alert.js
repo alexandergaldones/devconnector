@@ -1,3 +1,4 @@
+// racf
 import React from 'react'
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -7,12 +8,12 @@ const Alert = ({alerts}) => alerts !== null && alerts.length > 0 && alerts.map(a
         {alert.msg}
     </div>
 ));
-
+ 
 Alert.propTypes = {
-    alerts: PropTypes.array.isRequired //ptar
+    alerts: PropTypes.array.isRequired //ptar map through the alert
 }
 
-const mapStateToProps = state =>  ({
+const mapStateToProps = state =>  ({   // fetch the data //get the alert state
     alerts: state.alert
 });
 

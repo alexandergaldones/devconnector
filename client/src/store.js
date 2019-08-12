@@ -1,5 +1,5 @@
 import { createStore, applyMiddleware } from 'redux';
-import { composeWithDevTools } from 'redux-devtools-extension';
+import { composeWithDevTools } from 'redux-devtools-extension'; // view app storage-states etcs - for chrome extension visibility
 import thunk from 'redux-thunk'; // middleware
 import rootReducer from './reducers' // multiple reducer combine them in here
 
